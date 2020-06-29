@@ -54,10 +54,8 @@ void search(char pat[], char txt[], int q)
 
 int main() 
 { 
-//	char stxt[]="fruits are healthy , you should eat them regularly.";
-//	char txt[]="apple is healthy fruit to eat is a good bvoy.";
-	char stxt[]="Geeks forgeeks.";
-	char txt[]="forgeeks.";
+	char stxt[]="fruits are healthy , you should eat them regularly.";
+	char txt[]="apple is healthy fruit to eat is a good bvoy.";
 	int q = 123681; //of ur choice
 	 
 	int len=strlen(txt);//13	
