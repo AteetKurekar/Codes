@@ -1,3 +1,4 @@
+//here if the pat="a" and text="abc" ,it will not return any location.A complete pattern must be present in the string for matching i.e pat="abc". 
 #include <iostream>
 #include<string.h>
 using namespace std; 
