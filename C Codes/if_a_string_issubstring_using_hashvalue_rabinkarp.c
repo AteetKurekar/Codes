@@ -1,4 +1,4 @@
-//here if the pat=a and text="abc" ,it will give the location of a in abc i.e 0
+//here if the pat="a" and text="abc" ,it will give the location of a in abc i.e 0
 #include <iostream>
 #include<string.h>
 using namespace std; 
