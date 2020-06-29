@@ -6,16 +6,17 @@
 int main(){
 	char txt[]="Ateet Kurekar is a good boy.";
 	int len=strlen(txt);//13	
-	int i=0;
-	while(i<=len){
+	int i;
+	
+	for(i=0;i<=len;i++){
 		if(txt[i]==' '){
 			printf("\n");
-			i++;
+			continue;
 		}
 		else if(txt[i]=='.'){
 			break;
 		}
 		printf("%c",txt[i]);
-		i++;
+		continue;
 	}
 }
