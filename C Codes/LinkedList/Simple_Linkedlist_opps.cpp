@@ -6,7 +6,7 @@ struct node{
 	struct node *next;
 };
 struct node *head=NULL;
-
+//finding middle element using two pointers 
 void middle(){
 	struct node *fast=head;
 	struct node *slow=head;
