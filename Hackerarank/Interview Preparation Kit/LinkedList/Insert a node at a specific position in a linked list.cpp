@@ -24,7 +24,7 @@ struct SinglyLinkedList {
 };
 
 SinglyLinkedListNode* create_singly_linked_list_node(int node_data) {
-    SinglyLinkedListNode* node = (SinglyLinkedListNode*)malloc(sizeof(SinglyLinkedListNode));
+    SinglyLinkedListNode* node = malloc(sizeof(SinglyLinkedListNode));
 
     node->data = node_data;
     node->next = NULL;
@@ -106,12 +106,11 @@ SinglyLinkedListNode* insertNodeAtPosition(SinglyLinkedListNode* head, int data,
 }
 
 
-
 int main()
 {
     FILE* fptr = fopen(getenv("OUTPUT_PATH"), "w");
 
-    SinglyLinkedList* llist = (SinglyLinkedList*)malloc(sizeof(SinglyLinkedList));
+    SinglyLinkedList* llist = malloc(sizeof(SinglyLinkedList));
     llist->head = NULL;
     llist->tail = NULL;
 
@@ -160,7 +159,7 @@ int main()
 char* readline() {
     size_t alloc_length = 1024;
     size_t data_length = 0;
-    char* data = (char*)malloc(alloc_length);
+    char* data = malloc(alloc_length);
 
     while (true) {
         char* cursor = data + data_length;
@@ -173,7 +172,7 @@ char* readline() {
         if (data_length < alloc_length - 1 || data[data_length - 1] == '\n') { break; }
 
         size_t new_length = alloc_length << 1;
-        data = (char*)realloc(data, new_length);
+        data = realloc(data, new_length);
 
         if (!data) { break; }
 
@@ -184,8 +183,7 @@ char* readline() {
         data[data_length - 1] = '\0';
     }
 
-    data = (char*)realloc(data, data_length);
+    data = realloc(data, data_length);
 
     return data;
 }
-
