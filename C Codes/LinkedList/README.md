@@ -9,3 +9,13 @@ Linked List:
 sort_remove_duplicates.cpp 
 1.sort elements 
 2.remove duplicate elements
+
+Merge_point_of_two_linkedlist
+Gets the two list 
+[List #1] a--->b--->c
+                     \
+                      x--->y--->z--->NULL
+                     /
+     [List #2] p--->q
+     
+and finds a node common to both
