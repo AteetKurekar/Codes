@@ -1,0 +1,21 @@
+DoublyLinkedListNode* reverse(DoublyLinkedListNode* head) {
+    if(head==NULL || head->next==NULL)
+        return head;
+    DoublyLinkedListNode*current=head;
+    DoublyLinkedListNode*next=current->next;
+    DoublyLinkedListNode*prev=NULL;
+    
+    while(current!=NULL){
+        current->prev=next;
+        current->next=prev;
+        prev=current;
+        current=next;
+        if(current==NULL)
+            next=NULL;
+        else
+            next=current->next;
+    }
+    
+    return prev;
+
+}
