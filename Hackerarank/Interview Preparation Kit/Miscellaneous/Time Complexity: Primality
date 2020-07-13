@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+void isprime(int n){
+	if(n==1){
+		printf("Not prime\n");
+		return;
+	}
+	if(n==2 || n==3){
+		printf("Prime\n");
+		return;
+	}
+	if(n>3){
+		for(int i=2;i<=sqrt(n);i++){
+			if(n%i==0){
+				printf("Not prime\n");
+				return;
+			}
+		}
+		printf("Prime\n");
+		return;
+	}	
+}
+
+int main(){
+	int t;scanf("%d",&t);
+	while(t>0){
+		int n;scanf("%d",&n);
+		isprime(n);
+		t--;
+	}
+}
