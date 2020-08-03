@@ -1,0 +1,19 @@
+#include <stdlib.h>
+#include<stdio.h>
+#include<string.h>
+int main(){
+	int smax=-1,max=-1;
+	int arr[]={80,90,50,95,2,8,9,91};
+	for(int i=0;i<8;i++){
+		if(arr[i]>max){
+			smax=max;
+			max=arr[i];
+		}
+		else if(arr[i] < max && arr[i]>smax){
+			smax=arr[i];
+		}
+	}
+	printf("%d %d",max,smax);
+}
+	
+	
