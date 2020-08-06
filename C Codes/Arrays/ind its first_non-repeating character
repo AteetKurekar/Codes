@@ -1,0 +1,29 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<string.h>
+int main(){
+	char a[]="ateet kurekar";
+	for(int i=0;i<strlen(a)-1;i++){
+		if(a[i]=='?'){
+				continue;
+		}
+		for(int j=i+1;j<strlen(a);j++){
+			if(a[j]=='?'){
+				continue;
+			}
+			if(a[i]==a[j]){
+				a[i]='?';
+				a[j]='?';
+				continue;
+			}
+		}
+	
+	}
+	for(int i=0;i<strlen(a)-1;i++){
+		if(a[i]!='?' && a[i]!=' '){
+			printf("%c ",a[i]);	
+			break;
+		}
+	}
+}
+Other solution is HashMap storing string as key and occurance_count as value
