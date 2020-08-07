@@ -1,0 +1,18 @@
+package package1;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution {
+	public static void main(String[] args) {
+		String str="Ateet Kurekar.";
+		String search_string="Kurekar";
+		String arr[]=str.split("[. ]");//full stop and space "[!._,'@? ]"
+		for(String s:arr) {
+			if(s.equals(search_string))
+				System.out.println(s);
+		}
+	
+				
+	}
+}
