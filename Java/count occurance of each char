@@ -1,0 +1,22 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution {
+	public static void main(String[] args) {
+		HashMap<Character, Integer> hm=new HashMap<Character, Integer>();
+		String str="geeks for geeks";
+		char str1[]=str.toCharArray();
+		for(char c:str1){
+			if(c==' ')
+				continue;
+			if(hm.containsKey(c)) {
+				hm.put(c, hm.get(c)+1);
+				continue;
+			}
+			hm.put(c, 1);
+		}
+		for(Map.Entry m:hm.entrySet()) {
+			System.out.println(m.getKey()+" "+m.getValue());
+		}
+	}
+}
