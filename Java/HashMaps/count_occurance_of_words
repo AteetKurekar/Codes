@@ -1,0 +1,24 @@
+package package1;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution {
+	public static void main(String[] args) {
+		String str="Ateet Kurekar.Hello Ateet";
+		HashMap<String,Integer> hm=new HashMap<String,Integer>();
+		String arr[]=str.split("[!._,'@? ]");//full stop and space "[!._,'@? ]"
+			
+		for(String s:arr) {
+			if(hm.containsKey(s)) {
+				hm.put(s, hm.get(s)+1);
+				continue;
+			}
+			hm.put(s, 1);
+		}
+		for(Map.Entry<String, Integer> m:hm.entrySet()) {
+			System.out.println(m.getKey()+" "+m.getValue());
+		}
+				
+	}
+}
