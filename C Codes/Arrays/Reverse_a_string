@@ -29,10 +29,11 @@ void reverseWords(char* s)
 
 	// Reversing individual words as 
 	// explained in the first step 
-	while (*temp) { 
+	while (1) { 
 		temp++; 
 		if (*temp == '\0') { 
 			reverse(word_begin, temp - 1); 
+			break;
 		} 
 		else if (*temp == ' ') { 
 			reverse(word_begin, temp - 1); 
