@@ -1,3 +1,8 @@
+5
+3 30 34 5 9
+OUTPUT:9534330
+
+
 #include<stdio.h>
 #include<string.h>
 #include<math.h>
