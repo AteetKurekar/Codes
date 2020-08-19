@@ -1,0 +1,20 @@
+#include<stdio.h>
+#define FALSE -1
+#define NULL 0
+#define TRUE 1
+
+int main(){
+	if(NULL)
+		printf("NULL");
+	else if(FALSE)
+		printf("TRUE");
+	else
+		printf("FALSE");
+	return 0;
+}
+=>TRUE✔
+Explanation
+The if block will be executed if the condition returns a non-zero value. In the above program, if(NULL) is appears like if(0), 
+here the condition is false. Then else if(FALSE) is appears like else if(-1), here it has a non-zero value so the else if block is executed.
+==========================================================================================================================================================================
+
