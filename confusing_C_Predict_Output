@@ -18,3 +18,72 @@ The if block will be executed if the condition returns a non-zero value. In the 
 here the condition is false. Then else if(FALSE) is appears like else if(-1), here it has a non-zero value so the else if block is executed.
 ==========================================================================================================================================================================
 
+#include<stdio.h>
+int main(){
+	int i = 0, j = 1, k = 0;
+		if(++k, j, i++)
+			printf("%d %d %d", i, j, k);
+	return 0;
+}
+=>Prints Nothing
+==========================================================================================================================================================================
+
+#include<stdio.h>
+int main(){
+	int i;
+		if(true)
+			printf("This will work");
+		else 
+			printf("This will not work");
+	return 0;
+}
+=>Compilation Error
+Error: Undefined symbol 'true'.
+The above C program will prints error message because C programming does not support the keyword 'true' and 'false'.
+==========================================================================================================================================================================
+
+#include<stdio.h>
+int main()
+{
+	char str[8] = "if block";
+	if(str == "if block")
+		printf("if block executed");
+	else
+		printf("else block executed");
+	return 0;
+}
+=>compiler error intitializong str[8] it should be str[]
+OR
+int main()
+{
+
+	char str[] ="if block";
+	char str1[]= "if block\0";
+	if(strlen(str) == strlen(str1))
+		printf("if block executed");
+	else
+		printf("else block executed");
+	return 0;
+}
+=>else block executed
+Since strings are just arrays, you need to compare each character
+
+==========================================================================================================================================================================
+
+#include<stdio.h>
+int main()
+{
+	char str[] = "\0";
+	if(printf("%s",str))
+		printf("inside if block");
+	else
+		printf("inside else block");
+	return 0;
+}
+=>inside else block✔
+==========================================================================================================================================================================
+==========================================================================================================================================================================
+==========================================================================================================================================================================
+==========================================================================================================================================================================
+==========================================================================================================================================================================
+==========================================================================================================================================================================
