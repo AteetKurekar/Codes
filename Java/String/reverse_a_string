@@ -1,0 +1,21 @@
+Following are some interesting facts about String and StringBuffer classes :
+1. Objects of String are immutable.
+2. String class in Java does not have reverse() method, however StringBuilder class has built in reverse() method.
+3. StringBuilder class do not have toCharArray() method, while String class does have toCharArray() method.
+
+
+package collections;
+import java.lang.*; 
+import java.io.*; 
+import java.util.*; 
+public class Demo {
+
+	public static void main(String[] args) {
+		String a="Ateet Kurekar";
+		StringBuilder n=new StringBuilder();
+		n.append(a);
+		System.out.println(n.reverse());
+
+	}
+
+}
