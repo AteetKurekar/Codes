@@ -1,5 +1,5 @@
 //here IP point is we forget is a character is declared in '' and string in ""
-//mistake i made here was txt[i]==' ' which should be txt[i]==" "
+//mistake i made here was txt[i]==" " which should be txt[i]==' '
 #include <stdio.h>
 #include <stdlib.h>
 #include<string.h>
