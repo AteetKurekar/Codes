@@ -7,7 +7,8 @@ The valid triplets are:
 Input : A[] = {1, 1, 1, 2, 2}
 Output : 6
 
-
+Steps:Sort an array first
+then hold an element starting from index 2 and then trying all the elements before that position.
 #include<stdlib.h>
 #include<stdio.h>
 void merge(int arr[], int l, int m, int r) { 
