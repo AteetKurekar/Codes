@@ -3,7 +3,7 @@
 #include<string.h>
 
 int main(){
-	char a[10][100]={'\0'};
+	char a[10][100]={'\0'};//Note:This is must
 	char s[]="Ateet Kurekar.Is a good boy.";
 	int row=0,col=0;
 	
