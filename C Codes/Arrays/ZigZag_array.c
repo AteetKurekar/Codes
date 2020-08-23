@@ -1,6 +1,7 @@
 a < b > c < d > e < f.
 
-
+//First Sort array
+//then flip every odd position with its successive element
 #include <stdio.h> 
 #include <stdlib.h> 
 
