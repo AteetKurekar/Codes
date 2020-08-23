@@ -3,6 +3,8 @@ Following are some interesting facts about String and StringBuffer classes :
 2. String class in Java does not have reverse() method, however StringBuilder class has built in reverse() method.
 3. StringBuilder class do not have toCharArray() method, while String class does have toCharArray() method.
 
+StringBuffer is similar to StringBuilder except
+one difference that StringBuffer is thread safe, i.e., multiple threads can use it without any issue. The thread safety brings a penalty of performance.
 
 package collections;
 import java.lang.*; 
