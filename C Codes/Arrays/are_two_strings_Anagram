@@ -1,3 +1,5 @@
+amazon==azoamn
+
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
@@ -11,6 +13,7 @@ int main(){
 				if(a[i]==b[j]){
 					b[j]='0';
 					count++;
+					break;
 				}
 			}
 		}
