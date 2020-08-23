@@ -83,6 +83,9 @@ int main()
 		int temp=arr[i];
 		arr[i]=arr[i+1];
 		arr[i+1]=temp;
+		//if array exceeds size
+		if(i+2>=arr_size)
+			break;
 	}
 	printf("\nZigzag array is \n"); 
 	printArray(arr, arr_size); 
