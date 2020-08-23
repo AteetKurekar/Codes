@@ -1,3 +1,4 @@
+{ A_i, A_j, A_k} at least one of the numbers can be written as the sum of the other two.
 Input : A[] = {1, 2, 3, 4, 5}
 Output : 4
 The valid triplets are:
