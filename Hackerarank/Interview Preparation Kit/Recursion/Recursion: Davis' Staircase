@@ -16,7 +16,7 @@ Count ways to reach the nth stair using step 1, 2 or 3
 There are 13 possible ways
 =====================================================================================================================================
 Solution:
-Using REccursive approach
+Using REccursive approach:O(n^3)
    int findStep(int n) 
     { 
         if (n == 1 || n == 0) 
@@ -29,7 +29,7 @@ Using REccursive approach
                                    + findStep(n - 1); 
     } 
 ==========================================================================================================================================
-Using dynamic programming
+Using dynamic programming:O(n)
     static int stepPerms(int n) {
     	int[] steps=new int[n+1];
     	steps[0]=1;//additionally defined for code
