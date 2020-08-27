@@ -1,7 +1,7 @@
 package beginners;
 
 // Java program to rotate an array by 
-// d elements 
+//ROtate array by one element d times 
 
 public class Solution { 
 	/*Function to left rotate arr[] of size n by d*/
