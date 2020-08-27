@@ -1,3 +1,32 @@
+Java:
+package beginners;
+
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.Iterator;
+public class Solution {
+
+public static void main(String[] args) {
+	LinkedList<Integer> ll=new LinkedList<Integer>();
+	System.out.println("ENter no. of elements:");
+	Scanner sc=new Scanner(System.in);
+	int n=sc.nextInt();
+	for(int i=0;i<n;i++) {
+		int n1=sc.nextInt();
+		ll.add(n1);
+	}
+	System.out.println("Insert data and position:");
+	int data=sc.nextInt();
+	int pos=sc.nextInt();
+	ll.add(pos, data);
+	Iterator<Integer> it=ll.iterator();
+	while(it.hasNext()) {
+		System.out.println(it.next());
+	}
+}
+}
+
+==============================================================================================
 #include <assert.h>
 #include <limits.h>
 #include <math.h>
