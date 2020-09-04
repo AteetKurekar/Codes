@@ -1,0 +1,11 @@
+package demoss;
+public class demo {
+public static void main(String[] args) {
+
+	String contents = "i love my country";
+	System.out.println(contents);
+    contents=contents.replaceAll("\\bcountry\\b", "India");
+    System.out.println(contents);
+
+}
+}
