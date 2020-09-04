@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+char *replace(char str[],char *repwith,int start,int end,int len){
+	char *temp=(char *)calloc(1000,sizeof(char));
+	for(int i=0;i<start;i++){
+		strncat(temp,&str[i],1);
+	}
+	
+	strcat(temp,repwith);
+	
+	for(int i=end+1;i<len;i++){
+		strncat(temp,&str[i],1);
+	}
+	return temp;
+	printf("%s",temp);
+}
+int main(){
+	char *str="I love country.country is desh";
+	char *rep="country";
+	char *repwith="India";
+	int count=0;
+	for(int i=0;i<strlen(str)-1;i++) {
+		for(int j=0;j<strlen(rep);j++) {
+		    if(str[i+j]==rep[j]){
+		    	count++;
+			}
+		    else{
+		    	count=0;
+		    	break;
+			}
+		}
+		if(count==strlen(rep)){
+//			printf("%d ",i);
+			str=replace(str,repwith,i,i+strlen(rep)-1,strlen(str));
+			count=0;
+		}
+	}
+	printf("%s",str);
+}
