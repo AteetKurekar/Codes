@@ -1,0 +1,34 @@
+package demoss;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class demo {
+	   public static void main(String[] args) throws IOException {
+		      Scanner sc = new Scanner(new File("D://demo.txt"));
+		      String input;
+		      StringBuffer sb = new StringBuffer();
+		      while (sc.hasNextLine()) {
+		         input = sc.nextLine();
+		         sb.append("\n"+input);
+		      }
+		      String contents = sb.toString();
+		      System.out.println("Contents of the File: "+contents);
+		      contents = contents.replaceAll("\\bcountry\\b", "India");
+		      System.out.println("Contents of the string after replacement: "+contents);
+		      
+		      
+		      try{    
+		    	  FileWriter fw=new FileWriter("D://demo.txt");    
+		          fw.write(contents);    
+		          fw.close();    
+		      }
+		      catch(Exception e){
+		    	  System.out.println(e);
+		      }    
+		      System.out.println("Success...");    
+		        
+		   }
+}
