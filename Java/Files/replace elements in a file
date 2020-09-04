@@ -32,3 +32,9 @@ public class demo {
 		        
 		   }
 }
+/*
+Contents of the File: I love my country.I am Indian.
+Contents of the string after replacement: I love my India.I am Indian.
+Success...
+
+*/
