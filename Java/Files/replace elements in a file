@@ -12,7 +12,7 @@ public class demo {
 		      StringBuffer sb = new StringBuffer();
 		      while (sc.hasNextLine()) {
 		         input = sc.nextLine();
-		         sb.append("\n"+input);
+		         sb.append(input);
 		      }
 		      String contents = sb.toString();
 		      System.out.println("Contents of the File: "+contents);
