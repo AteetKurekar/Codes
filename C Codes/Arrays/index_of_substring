@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
+	char str[]="I love country.country is desh";
+	char rep[]="country";
+	int count=0;
+	for(int i=0;i<strlen(str)-1;i++) {
+		for(int j=0;j<strlen(rep);j++) {
+		    if(str[i+j]==rep[j]){
+		    	count++;
+			}
+		    else{
+		    	count=0;
+		    	break;
+			}
+		}
+		if(count==strlen(rep)){
+			printf("%d ",i);
+			count=0;
+		}
+	}
+}
