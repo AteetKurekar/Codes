@@ -40,7 +40,7 @@ void Dijkstra(int Graph[MAX][MAX], int n, int start) {
 	for(count=1;count<n;count++) {
 		mindistance = INFINITY;
 		for (i = 0; i < n; i++){
-    		if (distance[i] < mindistance && !visited[i]) {
+    		if (!visited[i] && distance[i] < mindistance ) {
         		mindistance = distance[i];
         		nextnode = i;
       		}
