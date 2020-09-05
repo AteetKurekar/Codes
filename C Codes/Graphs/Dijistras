@@ -37,6 +37,8 @@ void Dijkstra(int Graph[MAX][MAX], int n, int start) {
   	count = 1;
   	
 //iterate for relaxation
+//every time it loops gets a new mindistance and nextnode,start->nectnode->...from that next node gets the distance of
+//further nodes and if its less than existing performs relaxation 
 	for(count=1;count<n;count++) {
 		mindistance = INFINITY;
 		for (i = 0; i < n; i++){
@@ -52,6 +54,7 @@ void Dijkstra(int Graph[MAX][MAX], int n, int start) {
     	//now check for next shortest distance from source->nextnode->....
 		for (i = 0; i < n; i++){
       		if (!visited[i]){
+      			//Relaxation
         		if (mindistance + cost[nextnode][i] < distance[i]) {
           			distance[i] = mindistance + cost[nextnode][i];
           			parent[i] = nextnode;//mark nextnode as parent of that node 
