@@ -3,54 +3,71 @@
 #include <stdio.h>
 #define INFINITY 9999
 #define MAX 10
+
+//for printing path
+void print(int parent[],int source,int dest){
+	if(source==parent[dest])
+		return;
+	printf("%d->",parent[dest]);
+	print(parent,source,parent[dest]);
+}
+
 void Dijkstra(int Graph[MAX][MAX], int n, int start) {
-  int cost[MAX][MAX], distance[MAX], pred[MAX];
+  int cost[MAX][MAX], distance[MAX], parent[MAX];
   int visited[MAX], count, mindistance, nextnode, i, j;
 
   // Creating cost matrix
-  for (i = 0; i < n; i++){
-    for (j = 0; j < n; j++){
-      if (Graph[i][j] == 0)
-        cost[i][j] = INFINITY;
-      else
-        cost[i][j] = Graph[i][j];
-    }
+	for (i = 0; i < n; i++){
+    	for (j = 0; j < n; j++){
+      		if (Graph[i][j] == 0)
+        		cost[i][j] = INFINITY;
+      		else
+        		cost[i][j] = Graph[i][j];
+    	}
 	}
-  for (i = 0; i < n; i++) {
-    distance[i] = cost[start][i];
-    pred[i] = start;
-    visited[i] = 0;
+	
+	//Distance of all nodes from start node
+	for (i = 0; i < n; i++) {
+    	distance[i] = cost[start][i];
+    	parent[i] = start;//intialzing parent of all node to be start node
+    	visited[i] = 0;//mark all nodes un visited
+  	}
+	distance[start] = 0;//distance from start->start
+  	visited[start] = 1;//visited start
+  	count = 1;
+  	
+//iterate for relaxation
+	for(count=1;count<n;count++) {
+		mindistance = INFINITY;
+		for (i = 0; i < n; i++){
+    		if (distance[i] < mindistance && !visited[i]) {
+        		mindistance = distance[i];
+        		nextnode = i;
+      		}
+		}
+		
+		//now the node which is closest to start is visited hence mark it as 1
+    	visited[nextnode] = 1;
+    	
+    	//now check for next shortest distance from source->nextnode->....
+		for (i = 0; i < n; i++){
+      		if (!visited[i]){
+        		if (mindistance + cost[nextnode][i] < distance[i]) {
+          			distance[i] = mindistance + cost[nextnode][i];
+          			parent[i] = nextnode;//mark nextnode as parent of that node 
+        		}
+        	}
+    	}
   }
 
-  distance[start] = 0;
-  visited[start] = 1;
-  count = 1;
-
-  while (count < n - 1) {
-    mindistance = INFINITY;
-
-    for (i = 0; i < n; i++){
-      if (distance[i] < mindistance && !visited[i]) {
-        mindistance = distance[i];
-        nextnode = i;
-      }
-	}
-    visited[nextnode] = 1;
-    for (i = 0; i < n; i++){
-      if (!visited[i])
-        if (mindistance + cost[nextnode][i] < distance[i]) {
-          distance[i] = mindistance + cost[nextnode][i];
-          pred[i] = nextnode;
-        }
-    }
-    count++;
-  }
-
-  // Printing the distance
-  for (i = 0; i < n; i++){
-    if (i != start) {
-      printf("\nDistance from source to %d: %d", i, distance[i]);
-    }
+  // Printing the distance and path
+	for (i = 0; i < n; i++){
+    	if (i != start) {
+      		printf("\nDistance from source to %d: %d  Path: ", i, distance[i]);
+      		printf("%d->",start);
+			print(parent,start,i);
+			printf("%d",i);
+    	}
 	}
 }
 int main() {
