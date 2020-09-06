@@ -1,5 +1,3 @@
-// Dijkstra's Algorithm in C
-
 #include <stdio.h>
 #define INFINITY 9999
 #define MAX 10
@@ -8,8 +6,9 @@
 void print(int parent[],int source,int dest){
 	if(source==parent[dest])
 		return;
-	printf("%d->",parent[dest]);
+	
 	print(parent,source,parent[dest]);
+	printf("%d->",parent[dest]);
 }
 
 void Dijkstra(int Graph[MAX][MAX], int n, int start) {
@@ -133,7 +132,7 @@ int main() {
   Graph[6][5] = 1;
   Graph[6][6] = 0;
 
-  source = 3;
+  source = 0;
   printf("source : %d",source);
   Dijkstra(Graph, n, source);
 
